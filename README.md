@@ -17,10 +17,25 @@ https://pjreddie.com/media/files/papers/YOLOv3.pdf
   	$ conda install torch==2.1.1 torchvision==0.16.1 cudatoolkit=10.0 -c pytorch
 
 ### Preparar Dataset
-  Ejecutar labelImg.py
+  Ejecutar labelImg.py (En el mismo entorno conda)
+  Ingresamos a la ruuta donde tenemos la caprta en local del entrenador
+  E ingesamos esa ruta en la siguiente linea 
   
+        $conda install pyqt=5
+
+        $conda install -c anaconda lxml
+	
+	$cd D:\Proyectos PCA\YoloCustom_Syringe_Only\labelImg
+ 
   	$ cd labelImg
-  
+        
+##Crear el script resources.py
+        
+	$pyrcc5 -o resources.py resources.qrc
+
+#Mover el archivo resources.py  y resources.qrc rearchivo a la cartpeta libs en donde se descargó el repositorio
+#Probar 
+   
   	$ python labelImg.py
   
   Se deben obtener los archivos labels (.txt) de las imagenes de tu dataset
