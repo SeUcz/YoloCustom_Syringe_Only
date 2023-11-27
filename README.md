@@ -8,19 +8,34 @@ https://pjreddie.com/media/files/papers/YOLOv3.pdf
 
 ### Crear entorno en conda
 
-  	$ conda create -n YoloCustom anaconda python=3.6
+  	$ conda create -n YoloCustom anaconda python=3.10
 	
 	$ conda activate YoloCustom
   
   	$ pip install opencv-python numpy matplotlib tensorboard terminaltables pillow tqdm
   
-  	$ conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0 -c pytorch
+  	$ conda install torch==2.1.1 torchvision==0.16.1 cudatoolkit=10.0 -c pytorch
 
 ### Preparar Dataset
-  Ejecutar labelImg.py
+  Ejecutar labelImg.py (En el mismo entorno conda)
+  Ingresamos a la ruuta donde tenemos la caprta en local del entrenador
+  E ingesamos esa ruta en la siguiente linea 
   
+        $conda install pyqt=5
+
+        $conda install -c anaconda lxml
+	
+	$cd D:\Proyectos PCA\YoloCustom_Syringe_Only\labelImg
+ 
   	$ cd labelImg
-  
+        
+##Crear el script resources.py
+        
+	$pyrcc5 -o resources.py resources.qrc
+
+#Mover el archivo resources.py  y resources.qrc rearchivo a la cartpeta libs en donde se descargó el repositorio
+#Probar 
+   
   	$ python labelImg.py
   
   Se deben obtener los archivos labels (.txt) de las imagenes de tu dataset
@@ -53,25 +68,14 @@ https://pjreddie.com/media/files/papers/YOLOv3.pdf
   
   
 ### Entrenamiento en google colab
-  	$!pip install torch==1.1 torchvision==0.3
+  	$!pip install torch==2.1.1 torchvision==0.16.1
   
   	$!pip install opencv-python numpy matplotlib tensorboard terminaltables pillow tqdm
   
-  	$!git clone https://github.com/DavidReveloLuna/Yolov3Custom.git
+  	$!git clone https://github.com/SeUcz/YoloCustom_Syringe_Only
   
   	$cd Yolov3Custom
   
-  	$import urllib.request
-
-  	$urllib.request.urlretrieve('https://pjreddie.com/media/files/darknet53.conv.74','/content/Yolov3Custom/weights/darknet53.conv.74')
-	
-	$from google.colab import drive
-        
-	$drive.mount('/content/drive')
-	
-	$!cp -r "/content/drive/My Drive/Desarrollos/YoloCustom/custom" "/content/Yolov3Custom/data"
-        
-	$!cp -r "/content/drive/My Drive/Desarrollos/YoloCustom/config" "/content/Yolov3Custom"
 
   Entrar al directorio /usr/local/lib/libpackages/torchvision/transforms/functional.py
   
